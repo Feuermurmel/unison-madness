@@ -44,7 +44,7 @@ build/unison.done: src/unison.done
 
 # Build Unison.
 build/unison/src/unison: build/unison.done build/ocaml/prefix/bin/ocamlopt
-	PATH="$$(readlink -f build/ocaml/prefix/bin):$$PATH" $(MAKE) -C build/unison UISTYLE=text MACOSX_DEPLOYMENT_TARGET=10.13
+	PATH="$$(readlink -f build/ocaml/prefix/bin):$$PATH" $(MAKE) -j 1 -C build/unison UISTYLE=text MACOSX_DEPLOYMENT_TARGET=10.13
 
 # Copy the unison binary to the output directory.
 bin/unison: build/unison/src/unison

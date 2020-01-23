@@ -10,6 +10,7 @@ clean:
 # Clone the OCaml repository.
 src/ocaml.done:
 	mkdir -p src
+	rm -rf src/ocaml.git
 	git clone --bare git@github.com:ocaml/ocaml.git src/ocaml.git
 	touch $@
 
@@ -29,6 +30,7 @@ build/ocaml/prefix/bin/ocamlopt: build/ocaml.done
 # Clone the Unison repository.
 src/unison.done:
 	mkdir -p src
+	rm -rf src/unison.git
 	git clone --bare git@github.com:bcpierce00/unison.git src/unison.git
 	touch $@
 
